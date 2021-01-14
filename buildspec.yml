@@ -1,0 +1,15 @@
+---
+version: 0.2
+env:
+  variables:
+    arch: "arm64"
+    timestamp: "@1610323200"
+    release: "buster"
+
+phases:
+  install:
+    commands:
+      - yum -y install which
+  build:
+    commands:
+      - ./build.sh --arch ${arch} out/ ${release} ${timestamp}
